@@ -7,9 +7,9 @@ import HomePage from "./components/Home/HomePage";
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <SideBar />
-      <div>
+      <div className="components-container">
         <Route path={"/"}>
           <HomePage />
         </Route>

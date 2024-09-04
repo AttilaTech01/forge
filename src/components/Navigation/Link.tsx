@@ -1,23 +1,17 @@
 import { MouseEvent, ReactNode } from "react";
 import classNames from "classnames";
+import "./Link.css";
 import useNavigation from "../../hooks/useNavigation";
 
-// Define the props type for the Link component
 interface LinkProps {
   to: string;
   children: ReactNode;
-  className?: string;
-  activeClassName?: string;
 }
 
-function Link({ to, children, className, activeClassName }: LinkProps) {
+function Link({ to, children }: LinkProps) {
   const { navigate, currentPath } = useNavigation();
 
-  const classes = classNames(
-    "text-blue-500",
-    className,
-    currentPath === to && activeClassName
-  );
+  const classes = classNames(currentPath === to && "selected");
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
     // If ctrl(Win) or meta(IOS) key is pressed, open in new tab

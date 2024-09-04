@@ -1,0 +1,18 @@
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  border-left: solid 4px #3b82f6;
+  font-weight: 700;
+  padding-left: 8px;
+}
+
+.selected {
+  background-color: black;
+  border-left: solid 4px #3b82f6;
+  font-weight: 700;
+  padding-left: 8px;
+}
