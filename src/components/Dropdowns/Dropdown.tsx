@@ -1,23 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { GoChevronDown, GoChevronLeft } from "react-icons/go";
-import Panel from "./Panels/Panel";
+import "./Dropdown.css";
 
-// Define the type for each option
 export interface Option {
   label: string;
   value: string | number;
 }
 
-// Define props type for the Dropdown component
 interface DropdownProps {
   options: Option[];
-  value: Option | null;
+  value: Option | undefined;
   onChange: (option: Option) => void;
 }
 
 function Dropdown({ options, value, onChange }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const divEl = useRef<HTMLDivElement>(null); // Specify the type for ref
+  const divEl = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (event: MouseEvent) => {
@@ -30,17 +28,10 @@ function Dropdown({ options, value, onChange }: DropdownProps) {
       }
     };
 
-    document.addEventListener(
-      "click",
-      handler as unknown as EventListener,
-      true
-    );
+    document.addEventListener("click", handler as EventListener, true);
 
     return () => {
-      document.removeEventListener(
-        "click",
-        handler as unknown as EventListener
-      );
+      document.removeEventListener("click", handler as EventListener);
     };
   }, []);
 
@@ -54,31 +45,21 @@ function Dropdown({ options, value, onChange }: DropdownProps) {
   };
 
   const renderedOptions = options.map((option) => (
-    <div
-      className="list-item"
-      key={option.value}
-      onClick={() => handleSelectOption(option)}
-    >
+    <div key={option.value} onClick={() => handleSelectOption(option)}>
       {option.label}
     </div>
   ));
 
-  // eslint-disable-next-line prefer-const
-  let content = value?.label || "Select...";
-  // eslint-disable-next-line prefer-const
-  let icon = (
-    <span className="text-2xl">
-      {isOpen ? <GoChevronDown /> : <GoChevronLeft />}
-    </span>
-  );
+  const content = value?.label || "Select...";
+  const icon = <span>{isOpen ? <GoChevronDown /> : <GoChevronLeft />}</span>;
 
   return (
-    <div ref={divEl} className="w-48 relative">
-      <Panel isSelector onClick={handleToggleOpen}>
+    <div ref={divEl} className="parent">
+      <div className="panel selector" onClick={handleToggleOpen}>
         {content}
         {icon}
-      </Panel>
-      {isOpen && <Panel>{renderedOptions}</Panel>}
+      </div>
+      {isOpen && <div className="panel options">{renderedOptions}</div>}
     </div>
   );
 }

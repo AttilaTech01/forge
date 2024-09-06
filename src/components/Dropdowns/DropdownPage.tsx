@@ -2,10 +2,7 @@ import { useState } from "react";
 import Dropdown, { Option } from "./Dropdown";
 
 function DropdownPage() {
-  const [selectedOption, setSelectedOption] = useState<Option>({
-    label: "Default",
-    value: "default",
-  });
+  const [selectedOption, setSelectedOption] = useState<Option | undefined>();
 
   const handleSelect = (option: Option) => {
     setSelectedOption(option);
