@@ -1,24 +1,29 @@
-//import { useState } from "react";
-import Dropdown from "./Dropdown";
+import { useState } from "react";
+import Dropdown, { Option } from "./Dropdown";
 
 function DropdownPage() {
-  /*
-    const [selectedOption, setSelectedOption] = useState({ label: 'Default', value: 'default'});
+  const [selectedOption, setSelectedOption] = useState<Option>({
+    label: "Default",
+    value: "default",
+  });
 
-    const handleSelect = (option: string) => {
-        setSelectedOption(option);
-    };
+  const handleSelect = (option: Option) => {
+    setSelectedOption(option);
+  };
 
-    const options = [
-        { label: 'Red', value: 'red'},
-        { label: 'Green', value: 'green'},
-        { label: 'Blue', value: 'blue'}
-    ];
+  const options = [
+    { label: "Red", value: "red" },
+    { label: "Green", value: "green" },
+    { label: "Blue", value: "blue" },
+  ];
 
-    */
   return (
     <div>
-      <Dropdown test={'"First Component !"'} />
+      <Dropdown
+        options={options}
+        value={selectedOption}
+        onChange={handleSelect}
+      />
     </div>
   );
 }
