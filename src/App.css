@@ -8,8 +8,20 @@
   justify-content: start;
   position: fixed;
   top: 0;
+  width: 100%;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 200px;
 }
 
 .components-container {
-  margin-left: 2rem;
+  border: solid 2px black;
+  flex-grow: 4;
+  margin: 1rem;
+  min-height: 400px;
+  padding: 2rem;
 }
