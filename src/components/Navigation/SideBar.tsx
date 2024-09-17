@@ -1,5 +1,8 @@
 import Link from "./Link";
-import "./SideBar.css";
+
+interface SidebarProps {
+  classname?: string;
+}
 
 // Define the type for each link object
 interface LinkItem {
@@ -7,7 +10,7 @@ interface LinkItem {
   path: string;
 }
 
-function SideBar() {
+function SideBar({ classname }: SidebarProps) {
   const links: LinkItem[] = [
     { label: "Home", path: "/" },
     { label: "Button", path: "/button" },
@@ -22,7 +25,7 @@ function SideBar() {
     );
   });
 
-  return <div className="sidebar">{renderedLinks}</div>;
+  return <div className={classname}>{renderedLinks}</div>;
 }
 
 export default SideBar;

@@ -8,7 +8,7 @@ import HomePage from "./components/Home/HomePage";
 function App() {
   return (
     <div className="main-container">
-      <SideBar />
+      <SideBar classname="sidebar-container" />
       <div className="components-container">
         <Route path={"/"}>
           <HomePage />
