@@ -1,0 +1,30 @@
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.8); /* gray-300 with opacity */
+}
+
+/* Modal container */
+.modal-container {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  padding: 2.5rem; /* 10 rem padding */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Simulates a light shadow */
+}
+
+/* Flex container for action bar */
+.modal-action-bar {
+  display: flex;
+  justify-content: flex-end;
+}

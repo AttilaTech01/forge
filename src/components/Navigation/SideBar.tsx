@@ -15,6 +15,7 @@ function SideBar({ classname }: SidebarProps) {
     { label: "Home", path: "/" },
     { label: "Button", path: "/button" },
     { label: "Dropdown", path: "/dropdown" },
+    { label: "Modal", path: "/modal" },
   ];
 
   const renderedLinks = links.map((link: LinkItem) => {
