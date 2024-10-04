@@ -5,13 +5,8 @@ import ButtonPage from "./components/Buttons/ButtonPage";
 import DropdownPage from "./components/Dropdowns/DropdownPage";
 import ModalPage from "./components/Modals/ModalPage";
 import HomePage from "./components/Home/HomePage";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    document.body.style.overflow = "auto"; // Ensure scrolling is enabled globally
-  }, []);
-
   return (
     <div className="main-container">
       <SideBar classname="sidebar-container" />

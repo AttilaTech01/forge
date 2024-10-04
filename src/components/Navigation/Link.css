@@ -5,14 +5,10 @@ a {
 }
 
 a:hover {
-  border-left: solid 4px #3b82f6;
   font-weight: 700;
-  padding-left: 8px;
 }
 
 .selected {
   background-color: black;
-  border-left: solid 4px #3b82f6;
   font-weight: 700;
-  padding-left: 8px;
 }
